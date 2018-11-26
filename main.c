@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "ranking.h"
 void creditos();
 void jogar();
 
@@ -29,6 +30,7 @@ int main(int argc, char** argv) {
                 break;
             case 2:
                 printf("RANKING\n");
+                top5();
                 //Ranking();
                 break;
             case 3:
