@@ -6,19 +6,30 @@
 
 #include <stdio.h>
 #include <string.h>
-
-typedef struct palavra{
-    int qntLetras;
-    char palavra[12];
-} palavra;
+#include <stdlib.h>
+#include <stddef.h>
+#include "IOforca.h"
 
 void top5 (){
+    int tam = strlen("Meudeus");
     palavra pal;
-    strcpy(pal.palavra, "cachorro");
-    pal.qntLetras = 8;
+    pal.palavra = (char*) malloc(tam * sizeof(char));
+    pal.palavra = "Meudeussssss";
+    pal.qntLetras = strlen(pal.palavra);
+    printf("%s", pal.palavra);
+    char *sub = strstr(pal.palavra, "e");
+    int uau = pal.palavra - sub;
+    printf("%d", pal.qntLetras);
     
-    FILE *ranking;
-    ranking = fopen( "ranking.bin", "a+b" );
-    int a = fwrite(&pal, sizeof(palavra), 1, ranking);
-    fclose(ranking);
+}
+
+int qntsLetrasPossui(char* palavra , char* letra){
+    int qnt = 0;
+    
+    while (strstr(palavra, letra) != NULL ) {
+        palavra = strstr(palavra, letra);
+        qnt++;
+    }
+
+    return qnt;
 }

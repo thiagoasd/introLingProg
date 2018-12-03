@@ -2,14 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "ranking.h"
+#include "IOforca.h"
 void creditos();
 void jogar();
-
-struct palavra{
-    int qntLetras;
-    char *palavra;
-};
-
 
 int main(int argc, char** argv) {
 
@@ -30,7 +25,11 @@ int main(int argc, char** argv) {
                 break;
             case 2:
                 printf("RANKING\n");
-                top5();
+                char * palavra = "cachorro";
+                char * letra = "d";
+                qntsLetrasPossui(palavra, letra);
+                
+                //top5();
                 //Ranking();
                 break;
             case 3:
@@ -60,24 +59,10 @@ void creditos(){
 }
 
 void jogar(){
-
-    struct palavra word;
-    word.palavra = "palavra";
-    word.qntLetras = strlen(word.palavra);
-    printf(word.palavra);
-    printf("%d", word.qntLetras);
-    
-    int i;
-    for (i = 0; i < word.qntLetras; i++) {
-        printf("_%c_", word.palavra[i]);
-    }
-    
-    char s1[] = "m";
-    scanf(" %c", &s1);
-
-    char* p;
-    p = strstr(word.palavra, s1);
-        printf("OK");
-    
+    char * word = "cachorro";
+    palavra plv;
+    plv.palavra = word;
+    plv.qntLetras = strlen(word);
+    salvaPalavra(&plv);
     
 }

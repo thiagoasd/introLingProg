@@ -3,6 +3,8 @@
 
 
 void ranking();
+void top5();
+int qntsLetrasPossui(char *letra, char* palavra);
 
 #endif /* RANKING_H */
 
