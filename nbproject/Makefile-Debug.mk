@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/IOforca.o \
+	${OBJECTDIR}/forcaUtils.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/ranking.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/IOforca.o: IOforca.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/IOforca.o IOforca.c
+
+${OBJECTDIR}/forcaUtils.o: forcaUtils.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/forcaUtils.o forcaUtils.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}

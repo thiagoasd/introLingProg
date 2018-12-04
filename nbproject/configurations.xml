@@ -5,12 +5,14 @@
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
       <itemPath>IOforca.h</itemPath>
+      <itemPath>forcaUtils.h</itemPath>
       <itemPath>ranking.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
       <itemPath>IOforca.c</itemPath>
+      <itemPath>forcaUtils.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>ranking.c</itemPath>
     </logicalFolder>
@@ -45,6 +47,10 @@
       </item>
       <item path="IOforca.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="forcaUtils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="forcaUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="ranking.bin" ex="false" tool="3" flavor2="0">
@@ -77,6 +83,10 @@
       <item path="IOforca.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="IOforca.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="forcaUtils.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="forcaUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>

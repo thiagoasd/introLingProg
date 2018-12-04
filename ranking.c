@@ -23,13 +23,3 @@ void top5 (){
     
 }
 
-int qntsLetrasPossui(char* palavra , char* letra){
-    int qnt = 0;
-    
-    while (strstr(palavra, letra) != NULL ) {
-        palavra = strstr(palavra, letra);
-        qnt++;
-    }
-
-    return qnt;
-}

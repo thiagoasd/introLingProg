@@ -1,5 +1,5 @@
-build/Debug/Cygwin-Windows/main.o: main.c ranking.h IOforca.h
-
-ranking.h:
+build/Debug/Cygwin-Windows/main.o: main.c IOforca.h forcaUtils.h
 
 IOforca.h:
+
+forcaUtils.h:

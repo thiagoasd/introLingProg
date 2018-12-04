@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "ranking.h"
+
 #include "IOforca.h"
+#include "forcaUtils.h"
 void creditos();
 void jogar();
 
@@ -59,10 +59,25 @@ void creditos(){
 }
 
 void jogar(){
-    char * word = "cachorro";
-    palavra plv;
-    plv.palavra = word;
-    plv.qntLetras = strlen(word);
-    salvaPalavra(&plv);
-    
+    int vida = 5;
+    char* letras = malloc( 0 * sizeof(char));
+
+    while (1){
+        char * word = "cachorro";       
+        char letra = 'a';
+        scanf(" %c", &letra);
+        int aux = qntsLetrasPossui(word, &letra);
+        if (aux > 0){
+            printf("Acertou");
+            letras = realloc(letras, sizeof(char) + 1);
+            letras[0] = letra;
+        } else {        
+            printf("errou");
+            vida--;
+        }      
+        if(vida <= 0){
+            printf("Acabou");
+            break;
+        }
+    }   
 }
