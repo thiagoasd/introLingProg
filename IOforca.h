@@ -7,5 +7,7 @@ typedef struct palavra{
 } palavra;
 
 void salvaPalavra(palavra* plv);
+int qntsPalavras();
+palavra* lePalavraAleatoria();
 
 #endif /* IOFORCA_H */
