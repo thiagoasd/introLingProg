@@ -3,7 +3,7 @@
 
 typedef struct palavra{
     int qntLetras;
-    char *palavra;
+    char palavra[20];
 } palavra;
 
 void salvaPalavra(palavra* plv);

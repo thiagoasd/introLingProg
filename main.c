@@ -10,6 +10,8 @@ void printaPalavra();
 void printaStatus();
 char* addLetra(char* letras, char letra);
 int checaVitoria(char* palavra, char* letras);
+void cadastraPalavra();
+void quantidadeDePalavras();
 
 int main(int argc, char** argv) {
 
@@ -17,9 +19,9 @@ int main(int argc, char** argv) {
     while (n != 0) {
         printf("***** Menu *****\n"
                 "1 - JOGAR\n"
-                "2 - RANKING\n"
-                "3 - CADASTRAR PALAVRAS\n"
-                "4 - CRÉDITOS\n"
+                "2 - CADASTRAR PALAVRAS\n"
+                "3 - QUANTIDADE DE PALAVRAS\n"
+                "4 - CREDITOS\n"
                 "5 - SAIR\n"
                 "Digite de 1 a 5: ");
         scanf("%d", &n);
@@ -29,15 +31,16 @@ int main(int argc, char** argv) {
                 jogar();
                 break;
             case 2:
-                printf("RANKING\n");
+                cadastraPalavra();
                 break;
             case 3:
-                //cadastrarPalavra();
+                quantidadeDePalavras();
                 break;
             case 4:
                 creditos();
                 break;
             case 5:
+                exit(0);
                 break;
             default:
                 printf("Opcao invalida.\n");
@@ -58,20 +61,22 @@ void creditos() {
 
 void jogar() {
     int vida = 5;
+    palavra *plv = (palavra*) malloc(sizeof(palavra));
+    plv = lePalavraAleatoria(plv);  
     char* letras = "";
-    char* palavra = "cachorro";
     char letra = 'x';
     while (1) {
-        printaPalavra(palavra, letras);
+        printaPalavra(plv->palavra, letras);
         printaStatus(vida);
         fflush(stdin);
+        printf("proxima letra: ");
         scanf(" %c", &letra);
-        int aux = qntsLetrasPossui(palavra, letra);
+        int aux = qntsLetrasPossui(plv->palavra, letra);
         if (aux > 0) {
             printf("Acertou!\n");
             letras = addLetra(letras, letra);
-            if(checaVitoria(palavra, letras) == 1){
-                printf("Ganhou!");
+            if (checaVitoria(plv->palavra, letras) == 1) {
+                printf("Ganhou!\n\n");
                 break;
             }
         } else {
@@ -79,7 +84,8 @@ void jogar() {
             vida--;
         }
         if (vida <= 0) {
-            printf("Acabou\n");
+            printf("Voce perdeu!\n");
+            printf("A palavra correta era %s", plv->palavra);
             break;
         }
     }
@@ -104,7 +110,7 @@ void printaPalavra(char *palavra, char* letrasDescobertas) {
 }
 
 void printaStatus(int vida) {
-    printf("Você tem %d chance(s) sobrando!\n", vida);
+    printf("Voce tem %d chance(s) sobrando!\n", vida);
 }
 
 char* addLetra(char* letras, char letra) {
@@ -128,10 +134,25 @@ int checaVitoria(char* palavra, char* letras) {
                 aux = 1;
             }
         }
-        if(aux == 0){
+        if (aux == 0) {
             break;
         }
     }
 
     return aux;
+}
+
+void cadastraPalavra() {
+    char * aux;
+    printf("Digite a palavra a cadastrar: ");
+    scanf("%s", aux);
+    palavra plv;
+    strcpy(plv.palavra, aux);
+    plv.qntLetras = strlen(aux);
+    salvaPalavra(&plv);
+    printf("Palavra cadastrada\n");
+}
+
+void quantidadeDePalavras(){
+    printf("A biblioteca possui %d palavra(s) registradas\n", qntsPalavras()); 
 }

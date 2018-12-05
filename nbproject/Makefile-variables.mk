@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=introlingprog
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/introlingprog
+CND_ARTIFACT_NAME_Debug=projeto_final
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/projeto_final
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=introlingprog.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/introlingprog.tar
+CND_PACKAGE_NAME_Debug=projetofinal.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/projetofinal.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=introlingprog
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/introlingprog
+CND_ARTIFACT_NAME_Release=projeto_final
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/projeto_final
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=introlingprog.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/introlingprog.tar
+CND_PACKAGE_NAME_Release=projetofinal.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/projetofinal.tar
 #
 # include compiler specific variables
 #

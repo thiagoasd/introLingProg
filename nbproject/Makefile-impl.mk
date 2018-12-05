@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=introLingProg
+PROJECTNAME=Projeto Final
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -6,7 +6,6 @@
                    projectFiles="true">
       <itemPath>IOforca.h</itemPath>
       <itemPath>forcaUtils.h</itemPath>
-      <itemPath>ranking.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
@@ -14,12 +13,11 @@
       <itemPath>IOforca.c</itemPath>
       <itemPath>forcaUtils.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>ranking.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Arquivos de Recurso"
                    projectFiles="true">
-      <itemPath>ranking.bin</itemPath>
+      <itemPath>biblioteca.bin</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Arquivos de Teste"
@@ -47,17 +45,13 @@
       </item>
       <item path="IOforca.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="biblioteca.bin" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="forcaUtils.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="forcaUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ranking.bin" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ranking.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ranking.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -84,17 +78,13 @@
       </item>
       <item path="IOforca.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="biblioteca.bin" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="forcaUtils.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="forcaUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ranking.bin" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ranking.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="ranking.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
