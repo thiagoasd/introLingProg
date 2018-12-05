@@ -1,14 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "IOforca.h"
 #include "forcaUtils.h"
 void creditos();
 void jogar();
+void printaPalavra();
+void printaStatus();
+char* addLetra(char* letras, char letra);
+int checaVitoria(char* palavra, char* letras);
 
 int main(int argc, char** argv) {
 
-   int n = 1;
+    int n = 1;
     while (n != 0) {
         printf("***** Menu *****\n"
                 "1 - JOGAR\n"
@@ -25,12 +30,6 @@ int main(int argc, char** argv) {
                 break;
             case 2:
                 printf("RANKING\n");
-                char * palavra = "cachorro";
-                char * letra = "d";
-                qntsLetrasPossui(palavra, letra);
-                
-                //top5();
-                //Ranking();
                 break;
             case 3:
                 //cadastrarPalavra();
@@ -45,39 +44,94 @@ int main(int argc, char** argv) {
         }
 
     }
-    
-    
+
+
     return EXIT_SUCCESS;
 }
 
-
-void creditos(){
+void creditos() {
     printf("JOGO DA FORCA\n");
     printf("CRIADOR: THIAGO TEIXEIRA DE OLIVEIRA\n");
     printf("MATRICULA: 1820023597\n");
     printf("DISCIPLINA DE INTRODUÇÃO À LÍNGUAGEM DE PROGRAMAÇÃO\n");
 }
 
-void jogar(){
+void jogar() {
     int vida = 5;
-    char* letras = malloc( 0 * sizeof(char));
-
-    while (1){
-        char * word = "cachorro";       
-        char letra = 'a';
+    char* letras = "";
+    char* palavra = "cachorro";
+    char letra = 'x';
+    while (1) {
+        printaPalavra(palavra, letras);
+        printaStatus(vida);
+        fflush(stdin);
         scanf(" %c", &letra);
-        int aux = qntsLetrasPossui(word, &letra);
-        if (aux > 0){
-            printf("Acertou");
-            letras = realloc(letras, sizeof(char) + 1);
-            letras[0] = letra;
-        } else {        
-            printf("errou");
+        int aux = qntsLetrasPossui(palavra, letra);
+        if (aux > 0) {
+            printf("Acertou!\n");
+            letras = addLetra(letras, letra);
+            if(checaVitoria(palavra, letras) == 1){
+                printf("Ganhou!");
+                break;
+            }
+        } else {
+            printf("Errou\n");
             vida--;
-        }      
-        if(vida <= 0){
-            printf("Acabou");
+        }
+        if (vida <= 0) {
+            printf("Acabou\n");
             break;
         }
-    }   
+    }
+}
+
+void printaPalavra(char *palavra, char* letrasDescobertas) {
+    for (int i = 0; palavra[i]; i++) {
+        int aux = 0;
+        for (int j = 0; letrasDescobertas[j]; j++) {
+            if (palavra[i] == letrasDescobertas[j]) {
+                aux = 1;
+                break;
+            }
+        }
+        if (aux == 0) {
+            printf("-");
+        } else {
+            printf("%c", palavra[i]);
+        }
+    }
+    printf("\n");
+}
+
+void printaStatus(int vida) {
+    printf("Você tem %d chance(s) sobrando!\n", vida);
+}
+
+char* addLetra(char* letras, char letra) {
+    if (NULL == strchr(letras, letra)) {
+        int tam = strlen(letras);
+        char* resultado = (char*) malloc(tam + 1);
+        strcpy(resultado, letras);
+        resultado[tam] = letra;
+        return resultado;
+    } else {
+        return letras;
+    }
+}
+
+int checaVitoria(char* palavra, char* letras) {
+    int aux = 0;
+    for (int i = 0; palavra[i]; i++) {
+        aux = 0;
+        for (int j = 0; letras[j]; j++) {
+            if (palavra[i] == letras[j]) {
+                aux = 1;
+            }
+        }
+        if(aux == 0){
+            break;
+        }
+    }
+
+    return aux;
 }

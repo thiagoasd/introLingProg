@@ -7,13 +7,14 @@
 #include <stddef.h>
 #include <string.h>
 
-int qntsLetrasPossui(char* palavra , char* letra){
+int qntsLetrasPossui(char* palavra , char letra){
     int qnt = 0;
-    palavra = strstr(palavra, letra);
+    palavra = strchr(palavra, letra);
+
     while ( palavra != NULL ) {
         qnt++;
         palavra++;
-        palavra = strstr(palavra, letra);
+        palavra = strchr(palavra, letra);
     }
 
     return qnt;
